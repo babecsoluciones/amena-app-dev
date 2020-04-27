@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+		<link rel="stylesheet" type="text/css" href="js/jquery-1.5.0.mobile.min.css">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+		<style>
+		/* For avoiding title truncation in wp8 */
+		.ui-header .ui-title {
+				overflow: visible !important;
+		}
+		/* For fixing the absolute position issue for the default cordova gen page*/
+		#cjp-accordion1 .app {
+				left: 5px !important;
+				margin: 5px !important;
+				position: relative !important;
+		}
+		</style>
+        <title>AMENA | Epilepsia</title>
+        
+    </head>
+    <body>
+
+		<!-- page 1 -->
+		<div data-role="page" id="page1">
+			<div data-role="header">
+				<h1>Bienvenido</h1>
+			</div>
+			
+			<div class="ui-content">
+			<center>
+				<img src="img/logo.png" style="max-width:50%">
+				<br><br>
+				<span id="tUsuario">{Usuario}</span><br><br>
+				<span id="tReloj">{Reloj}</span><br><br>
+				<span id="tNoticias">{Hoy hay [N] noticias nuevas}</span><br><br>
+				<div id="xhrNoticias">
+                <br>
+				    <ul data-role="listview">
+                        <li><a href="#">Noticia 10</a></li>
+                        <li><a href="#">Noticia 09</a></li>
+                        <li><a href="#">Noticia 08</a></li>
+                        <li><a href="#">Noticia 07</a></li>
+                        <li><a href="#">Noticia 06</a></li>
+                    </ul>
+				</div>
+				</center>
+			</div><!-- end page 1 content -->
+			
+			<div data-role="footer" data-position="fixed">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#page2"><i class="fas fa-inbox"></i><br><small>Mensajes</small></a></li>
+						<li><a href="#page3"><i class="far fa-newspaper"></i><br><small>Noticias</small></a></li>
+						<li><a href="#page1" class="ui-btn-active ui-state-persist"><i class="fas fa-tachometer-alt"></i><br><small>Inicio</small></a></li>
+						<li><a href="#page4"><i class="fas fa-th"></i><br><small>Blog</small></a></li>
+						<li><a href="#page5"><i class="fas fa-id-card"></i><br><small>Perfil</small></a></li>
+					</ul>
+				</div><!-- /navbar -->
+			</div><!-- /footer -->
+		</div><!-- /page1 -->
+
+				<!-- page 2 -->
+		<div data-role="page" id="page2">
+			<div data-role="header">
+				<h1>Mensajes</h1>
+			</div>
+			
+			<div class="ui-content">
+				<!--agregamos tabs-->
+				<div data-role="tabs" id="tabsMSG">
+  <div data-role="navbar">
+    <ul>
+      <li><a href="#one" data-ajax="false" class="ui-btn-active"><i class="fas fa-inbox"></i></a></li>
+      <li><a href="#two" data-ajax="false" id="readMessage"><i class="far fa-comments"></i></a></li>
+      <li><a href="#three" data-ajax="false"><i class="fas fa-upload"></i></a></li>
+    </ul>
+  </div>
+  <div id="one" class="ui-body-d ui-content">
+   <h3>Entrada</h3>
+    <ul data-role="listview" style="overflow-y:scroll;">
+        <li><a href="#" onclick="readMSG()">Mensaje 01</a></li>
+        <li><a href="#" onclick="readMSG()">Mensaje 02</a></li>
+        <li><a href="#" onclick="readMSG()">Mensaje 03</a></li>
+        <li><a href="#" onclick="readMSG()">Mensaje 04</a></li>
+        <li><a href="#" onclick="readMSG()">Mensaje 05</a></li>
+        <li><a href="#" onclick="readMSG()">Mensaje 06</a></li>
+        <li><a href="#" onclick="readMSG()">Mensaje 07</a></li>
+        <li><a href="#" onclick="readMSG()">Mensaje 08</a></li>
+        <li><a href="#" onclick="readMSG()">Mensaje 09</a></li>
+        <li><a href="#" onclick="readMSG()">Mensaje 10</a></li>
+        <li><a href="#" onclick="readMSG()">Mensaje 11</a></li>
+        <li><a href="#" onclick="readMSG()">Mensaje 12</a></li>
+                    </ul>
+  </div>
+  <div id="two">
+  <h3>Chat</h3>
+   <div id="txtMsg" style="height:250px; overflow-y: scroll; padding-top:15px;">
+    <ul data-role="listview" style="width:100%">
+        <li><small><i>Admin: </i></small>Mensaje</li>
+        <li><small><i>Usuario: </i></small>Mensaje</li>
+        <li><small><i>Admin: </i></small>Mensaje</li>
+        <li><small><i>Usuario: </i></small>Mensaje</li>
+        <li><small><i>Admin: </i></small>Mensaje</li>
+    </ul>
+    </div>
+    <div class="ui-field-contain">
+    <input type="text" name="textinput-1" id="textinput-1" placeholder="Mensaje" value="">
+</div>
+  </div>
+  <div id="three">
+  <h3>Subir archivos</h3>
+   <ul data-role="listview" style="width:100%">
+        <li><input type="file"></li>
+        <li><input type="file"></li>
+        <li><input type="file"></li>
+        <li><input type="file"></li>
+        <li><input type="file"></li>
+    </ul>
+     <div class="ui-field-contain">
+    <input type="button" value="Subir">
+</div>
+  </div>
+</div>
+				<!--agregamos tabs-->
+			</div><!-- end page 2 content -->
+			
+			<div data-role="footer" data-position="fixed">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#page2" class="ui-btn-active ui-state-persist"><i class="fas fa-inbox"></i><br><small>Mensajes</small></a></li>
+						<li><a href="#page3"><i class="far fa-newspaper"></i><br><small>Noticias</small></a></li>
+						<li><a href="#page1"><i class="fas fa-tachometer-alt"></i><br><small>Inicio</small></a></li>
+						<li><a href="#page4"><i class="fas fa-th"></i><br><small>Blog</small></a></li>
+						<li><a href="#page5"><i class="fas fa-id-card"></i><br><small>Perfil</small></a></li>
+					</ul>
+				</div><!-- /navbar -->
+			</div><!-- /footer -->
+		</div><!-- /page2 -->
+		
+				<!-- page 3 -->
+		<div data-role="page" id="page3">
+			<div data-role="header">
+				<h1>Noticias</h1>
+			</div>
+			
+			<div class="ui-content"  style="overflow-y: scroll;">
+				
+    <ul data-role="listview" data-filter="true" data-filter-placeholder="Buscar" data-inset="true">
+        <li><a href="#">Noticia 10</a></li>
+        <li><a href="#">Noticia 09</a></li>
+        <li><a href="#">Noticia 08</a></li>
+        <li><a href="#">Noticia 07</a></li>
+        <li><a href="#">Noticia 06</a></li>
+        <li><a href="#">Noticia 05</a></li>
+        <li><a href="#">Noticia 04</a></li>
+        <li><a href="#">Noticia 03</a></li>
+        <li><a href="#">Noticia 02</a></li>
+        <li><a href="#">Noticia 01</a></li>
+    </ul>
+   
+			</div><!-- end page 3 content -->
+			
+			<div data-role="footer" data-position="fixed">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#page2"><i class="fas fa-inbox"></i><br><small>Mensajes</small></a></li>
+						<li><a href="#page3" class="ui-btn-active ui-state-persist"><i class="far fa-newspaper"></i><br><small>Noticias</small></a></li>
+						<li><a href="#page1"><i class="fas fa-tachometer-alt"></i><br><small>Inicio</small></a></li>
+						<li><a href="#page4"><i class="fas fa-th"></i><br><small>Blog</small></a></li>
+						<li><a href="#page5"><i class="fas fa-id-card"></i><br><small>Perfil</small></a></li>
+					</ul>
+				</div><!-- /navbar -->
+			</div><!-- /footer -->
+		</div><!-- /page3 -->
+            
+            <!-- page 4 -->
+		<div data-role="page" id="page4">
+			<div data-role="header">
+				<h1>Blog</h1>
+			</div>
+			
+			<div class="ui-content" style="overflow-y:scroll">
+				<!--generamos tabs-->
+				<ul data-role="listview" data-inset="true">
+    <li><a href="#"><img src="img/logo.png"><h2>Publicacion</h2><p>{fecha}</p></a></li>
+    <li><a href="#"><img src="img/logo.png"><h2>Publicacion</h2><p>{fecha}</p></a></li>
+    <li><a href="#"><img src="img/logo.png"><h2>Publicacion</h2><p>{fecha}</p></a></li>
+    <li><a href="#"><img src="img/logo.png"><h2>Publicacion</h2><p>{fecha}</p></a></li>
+    <li><a href="#"><img src="img/logo.png"><h2>Publicacion</h2><p>{fecha}</p></a></li>
+    <li><a href="#"><img src="img/logo.png"><h2>Publicacion</h2><p>{fecha}</p></a></li>
+    <li><a href="#"><img src="img/logo.png"><h2>Publicacion</h2><p>{fecha}</p></a></li>
+    
+</ul>
+				<!--generamos tabs-->
+			</div><!-- end page 1 content -->
+			
+			<div data-role="footer" data-position="fixed">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#page2"><i class="fas fa-inbox"></i><br><small>Mensajes</small></a></li>
+						<li><a href="#page3"><i class="far fa-newspaper"></i><br><small>Noticias</small></a></li>
+						<li><a href="#page1"><i class="fas fa-tachometer-alt"></i><br><small>Inicio</small></a></li>
+						<li><a href="#page4" class="ui-btn-active ui-state-persist"><i class="fas fa-th"></i><br><small>Blog</small></a></li>
+						<li><a href="#page5"><i class="fas fa-id-card"></i><br><small>Perfil</small></a></li>
+					</ul>
+				</div><!-- /navbar -->
+			</div><!-- /footer -->
+		</div><!-- /page4 -->
+            
+				<!-- page 5 -->
+		<div data-role="page" id="page5">
+			<div data-role="header">
+				<h1>Perfil</h1>
+			</div>
+			
+			<div class="ui-content">
+				<!--imprimismo formulario-->
+				<form>
+    <ul data-role="listview" data-inset="true">
+        <li class="ui-field-contain">
+            <label for="name2">Nombre:</label>
+            <input type="text" name="name2" id="name2" value="" data-clear-btn="true">
+        </li>
+        <li class="ui-field-contain">
+            <label for="name2">Apellidos:</label>
+            <input type="text" name="name2" id="name2" value="" data-clear-btn="true">
+        </li>
+        <li class="ui-field-contain">
+            <label for="slider2">Edad:</label>
+            <input type="range" name="slider2" id="slider2" value="5" min="5" max="100" data-highlight="true">
+        </li>
+        <li class="ui-field-contain">
+            <label for="select-choice-1" class="select">Sexo:</label>
+            <select name="select-choice-1" id="select-choice-1">
+                <option value="">Seleccione...</option>
+                <option value="M">Masculino</option>
+                <option value="F">Femenino</option>
+            </select>
+        </li>
+        <li class="ui-field-contain">
+            <label for="name2">E-mail:</label>
+            <input type="text" name="name2" id="name2" value="" data-clear-btn="true">
+        </li>
+        <li class="ui-field-contain">
+            <label for="name2">Tel&eacute;fono:</label>
+            <input type="text" name="name2" id="name2" value="" data-clear-btn="true">
+        </li>
+        <li class="ui-field-contain">
+            <label for="name2">Password:</label>
+            <input type="password" name="name2" id="name2" value="" data-clear-btn="true">
+        </li>
+        <li class="ui-body ui-body-b">
+            <fieldset class="ui-grid-a">
+                    <button type="submit" class="ui-btn ui-corner-all ui-btn-a">Guardar</button>
+            </fieldset>
+        </li>
+    </ul>
+</form>
+				<!--imprimismo formulario-->
+			</div><!-- end page 3 content -->
+			
+			<div data-role="footer" data-position="fixed">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#page2"><i class="fas fa-inbox"></i><br><small>Mensajes</small></a></li>
+						<li><a href="#page3"><i class="far fa-newspaper"></i><br><small>Noticias</small></a></li>
+						<li><a href="#page1"><i class="fas fa-tachometer-alt"></i><br><small>Inicio</small></a></li>
+						<li><a href="#page4"><i class="fas fa-th"></i><br><small>Blog</small></a></li>
+						<li><a href="#page5" class="ui-btn-active ui-state-persist"><i class="fas fa-id-card"></i><br><small>Perfil</small></a></li>
+					</ul>
+				</div><!-- /navbar -->
+			</div><!-- /footer -->
+		</div><!-- /page3 -->
+		
+<script type="text/javascript" src="cordova.js"></script><script type="text/javascript" src="js/jquery-1.11.1.min.js" id="cordova-jquery"></script><script type="text/javascript" id="jqm-trans-disable">
+		/* For having a faster transition */
+		$(document).on("mobileinit", function() {
+				$.mobile.defaultPageTransition = "none";
+				$.mobile.defaultDialogTransition = "none";
+		});
+		</script><script type="text/javascript" src="js/jquery-1.5.0.mobile.min.js"></script><script type="text/javascript" src="js/index.js"></script>
+		<script type="text/javascript">
+    <!--
+    function updateTime() {
+        var currentTime = new Date();
+        var hours = currentTime.getHours();
+        var minutes = currentTime.getMinutes();
+        var seconds = currentTime.getSeconds();
+        if (minutes < 10){
+            minutes = "0" + minutes;
+        }
+        if (seconds < 10){
+            seconds = "0" + seconds;
+        }
+        var v = hours + ":" + minutes + ":" + seconds + " ";
+        if(hours > 11){
+            v+="PM";
+        } else {
+            v+="AM"
+        }
+        setTimeout("updateTime()",1000);
+        document.getElementById('tReloj').innerHTML=v;
+    }
+    
+     
+      
+      updateTime();
+
+      // assume you want to change to the 3rd tab after 3 seconds
+      function readMSG()
+            {
+               // $("#tabsMSG").tabs( "option", "active", 1 );
+                $("#readMessage").trigger( "click");
+               
+               
+            }
+    
+    //-->
+</script>
+		
+		</body>
+</html>
