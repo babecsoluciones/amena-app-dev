@@ -53,7 +53,7 @@
 
 		<!-- page 1 -->
 		<div data-role="page" id="page1">
-			<div data-role="header">
+			<div data-role="header" data-position="fixed">
 				<h1>Bienvenido</h1>
 			</div>
 			
@@ -62,8 +62,7 @@
 				<img src="img/logo.png" style="max-width:50%">
 				<br><br>
 				<span id="tUsuario">{Usuario}</span><br><br>
-				<span id="tReloj">{Reloj}</span><br><br>
-				<span id="tNoticias">{Hoy hay [N] noticias nuevas}</span><br><br>
+				
 				<div id="xhrNoticias">
                 <br>
 				    <ul data-role="listview">
@@ -92,7 +91,7 @@
 
 				<!-- page 2 -->
 		<div data-role="page" id="page2">
-			<div data-role="header">
+			<div data-role="header" data-position="fixed">
 				<h1>Mensajes</h1>
 			</div>
 			
@@ -170,7 +169,7 @@
 		
 				<!-- page 3 -->
 		<div data-role="page" id="page3">
-			<div data-role="header">
+			<div data-role="header" data-position="fixed">
 				<h1>Noticias</h1>
 			</div>
 			
@@ -206,7 +205,7 @@
             
             <!-- page 4 -->
 		<div data-role="page" id="page4">
-			<div data-role="header">
+			<div data-role="header" data-position="fixed">
 				<h1>Blog</h1>
 			</div>
 			
@@ -240,7 +239,7 @@
             
 				<!-- page 5 -->
 		<div data-role="page" id="page5">
-			<div data-role="header">
+			<div data-role="header" data-position="fixed">
 				<h1>Perfil</h1>
 			</div>
 			
@@ -335,7 +334,7 @@
     
      
       
-      updateTime();
+      //updateTime();
 
       // assume you want to change to the 3rd tab after 3 seconds
       function readMSG()
