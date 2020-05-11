@@ -66,11 +66,11 @@
 				<div id="xhrNoticias">
                 <br>
 				    <ul data-role="listview">
-                        <li><a href="#">Noticia 10</a></li>
-                        <li><a href="#">Noticia 09</a></li>
-                        <li><a href="#">Noticia 08</a></li>
-                        <li><a href="#">Noticia 07</a></li>
-                        <li><a href="#">Noticia 06</a></li>
+                        <li><a href="#" onclick="document.location='noticia.html'">Noticia 10</a></li>
+                        <li><a href="#" onclick="document.location='noticia.html'">Noticia 09</a></li>
+                        <li><a href="#" onclick="document.location='noticia.html'">Noticia 08</a></li>
+                        <li><a href="#" onclick="document.location='noticia.html'">Noticia 07</a></li>
+                        <li><a href="#" onclick="document.location='noticia.html'">Noticia 06</a></li>
                     </ul>
 				</div>
 				</center>
@@ -96,17 +96,8 @@
 			</div>
 			
 			<div class="ui-content">
-				<!--agregamos tabs-->
-				<div data-role="tabs" id="tabsMSG">
-  <div data-role="navbar">
-    <ul>
-      <li><a href="#one" data-ajax="false" class="ui-btn-active"><i class="fas fa-inbox"></i></a></li>
-      <li><a href="#two" data-ajax="false" id="readMessage"><i class="far fa-comments"></i></a></li>
-      <li><a href="#three" data-ajax="false"><i class="fas fa-upload"></i></a></li>
-    </ul>
-  </div>
-  <div id="one" class="ui-body-d ui-content">
-   <h3>Entrada</h3>
+				<h3>Entrada</h3>
+				<br>
     <ul data-role="listview" style="overflow-y:scroll;">
         <li><a href="#" onclick="readMSG()">Mensaje 01</a></li>
         <li><a href="#" onclick="readMSG()">Mensaje 02</a></li>
@@ -121,37 +112,6 @@
         <li><a href="#" onclick="readMSG()">Mensaje 11</a></li>
         <li><a href="#" onclick="readMSG()">Mensaje 12</a></li>
                     </ul>
-  </div>
-  <div id="two">
-  <h3>Chat</h3>
-   <div id="txtMsg" style="height:250px; overflow-y: scroll; padding-top:15px;">
-    <ul data-role="listview" style="width:100%">
-        <li><small><i>Admin: </i></small>Mensaje</li>
-        <li><small><i>Usuario: </i></small>Mensaje</li>
-        <li><small><i>Admin: </i></small>Mensaje</li>
-        <li><small><i>Usuario: </i></small>Mensaje</li>
-        <li><small><i>Admin: </i></small>Mensaje</li>
-    </ul>
-    </div>
-    <div class="ui-field-contain">
-    <input type="text" name="textinput-1" id="textinput-1" placeholder="Mensaje" value="">
-</div>
-  </div>
-  <div id="three">
-  <h3>Subir archivos</h3>
-   <ul data-role="listview" style="width:100%">
-        <li><input type="file"></li>
-        <li><input type="file"></li>
-        <li><input type="file"></li>
-        <li><input type="file"></li>
-        <li><input type="file"></li>
-    </ul>
-     <div class="ui-field-contain">
-    <input type="button" value="Subir">
-</div>
-  </div>
-</div>
-				<!--agregamos tabs-->
 			</div><!-- end page 2 content -->
 			
 			<div data-role="footer" data-position="fixed">
@@ -176,16 +136,16 @@
 			<div class="ui-content"  style="overflow-y: scroll;">
 				
     <ul data-role="listview" data-filter="true" data-filter-placeholder="Buscar" data-inset="true">
-        <li><a href="#">Noticia 10</a></li>
-        <li><a href="#">Noticia 09</a></li>
-        <li><a href="#">Noticia 08</a></li>
-        <li><a href="#">Noticia 07</a></li>
-        <li><a href="#">Noticia 06</a></li>
-        <li><a href="#">Noticia 05</a></li>
-        <li><a href="#">Noticia 04</a></li>
-        <li><a href="#">Noticia 03</a></li>
-        <li><a href="#">Noticia 02</a></li>
-        <li><a href="#">Noticia 01</a></li>
+        <li><a href="#" onclick="document.location='noticia.html'">Noticia 10</a></li>
+        <li><a href="#" onclick="document.location='noticia.html'">Noticia 09</a></li>
+        <li><a href="#" onclick="document.location='noticia.html'">Noticia 08</a></li>
+        <li><a href="#" onclick="document.location='noticia.html'">Noticia 07</a></li>
+        <li><a href="#" onclick="document.location='noticia.html'">Noticia 06</a></li>
+        <li><a href="#" onclick="document.location='noticia.html'">Noticia 05</a></li>
+        <li><a href="#" onclick="document.location='noticia.html'">Noticia 04</a></li>
+        <li><a href="#" onclick="document.location='noticia.html'">Noticia 03</a></li>
+        <li><a href="#" onclick="document.location='noticia.html'">Noticia 02</a></li>
+        <li><a href="#" onclick="document.location='noticia.html'">Noticia 01</a></li>
     </ul>
    
 			</div><!-- end page 3 content -->
@@ -212,13 +172,13 @@
 			<div class="ui-content" style="overflow-y:scroll">
 				<!--generamos tabs-->
 				<ul data-role="listview" data-inset="true">
-    <li><a href="#"><img src="img/logo.png"><h2>Publicacion</h2><p>{fecha}</p></a></li>
-    <li><a href="#"><img src="img/logo.png"><h2>Publicacion</h2><p>{fecha}</p></a></li>
-    <li><a href="#"><img src="img/logo.png"><h2>Publicacion</h2><p>{fecha}</p></a></li>
-    <li><a href="#"><img src="img/logo.png"><h2>Publicacion</h2><p>{fecha}</p></a></li>
-    <li><a href="#"><img src="img/logo.png"><h2>Publicacion</h2><p>{fecha}</p></a></li>
-    <li><a href="#"><img src="img/logo.png"><h2>Publicacion</h2><p>{fecha}</p></a></li>
-    <li><a href="#"><img src="img/logo.png"><h2>Publicacion</h2><p>{fecha}</p></a></li>
+    <li><a href="#" onclick="document.location='blog.html'"><img src="img/logo.png"><h2>Publicacion</h2><p>{fecha}</p></a></li>
+    <li><a href="#" onclick="document.location='blog.html'"><img src="img/logo.png"><h2>Publicacion</h2><p>{fecha}</p></a></li>
+    <li><a href="#" onclick="document.location='blog.html'"><img src="img/logo.png"><h2>Publicacion</h2><p>{fecha}</p></a></li>
+    <li><a href="#" onclick="document.location='blog.html'"><img src="img/logo.png"><h2>Publicacion</h2><p>{fecha}</p></a></li>
+    <li><a href="#" onclick="document.location='blog.html'"><img src="img/logo.png"><h2>Publicacion</h2><p>{fecha}</p></a></li>
+    <li><a href="#" onclick="document.location='blog.html'"><img src="img/logo.png"><h2>Publicacion</h2><p>{fecha}</p></a></li>
+    <li><a href="#" onclick="document.location='blog.html'"><img src="img/logo.png"><h2>Publicacion</h2><p>{fecha}</p></a></li>
     
 </ul>
 				<!--generamos tabs-->
@@ -340,7 +300,8 @@
       function readMSG()
             {
                // $("#tabsMSG").tabs( "option", "active", 1 );
-                $("#readMessage").trigger( "click");
+                //$("#readMessage").trigger( "click");
+                document.location="chat.html#page1";
                
                
             }

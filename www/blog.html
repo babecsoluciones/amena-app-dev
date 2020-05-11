@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+		<link rel="stylesheet" type="text/css" href="js/jquery-1.5.0.mobile.min.css">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+		<style>
+		/* For avoiding title truncation in wp8 */
+		.ui-header .ui-title {
+				overflow: visible !important;
+		}
+		/* For fixing the absolute position issue for the default cordova gen page*/
+		#cjp-accordion1 .app {
+				left: 5px !important;
+				margin: 5px !important;
+				position: relative !important;
+		}
+		</style>
+        <title>AMENA | Epilepsia</title>
+        
+    </head>
+    <body>
+
+		<!-- page 1 -->
+		<div data-role="page" id="page1">
+			<div data-role="header" data-position="fixed">
+			<a href="#" class="ui-btn-left btn-navegacion" onclick="regresar()"><i class="fas fa-arrow-left"></i></a>
+				<h1>Epilepsia y autismo</h1>
+			</div>
+			
+			<div class="ui-content">
+			<center>
+			    <img src="img/logo.png" style="max-width:550px; width:95%;"><br><br>
+			</center>
+			<ul data-role="listview">
+                        <li><h3  style="white-space: normal">Epilepsia y autismo: ¿Existe un vínculo?</h3><p style="white-space: normal">
+La epilepsia y el autismo son condiciones relativamente comunes que pueden tener un gran impacto en la vida de una persona. A menudo ocurren juntos, y los investigadores han estado buscando un posible vínculo entre ellos.
+<br>
+Los Centros para el Control y la Prevención de Enfermedades (CDC) estiman que cierto grado de autismo afecta a 1 de cada 59 niños, o el 1.7 por ciento de todos los niños en los Estados Unidos.
+<br>
+En 2015, el 1.2 por ciento de la población en los EE. UU. Tenía epilepsia activa, según los CDC.
+<br>
+Si los científicos encuentran un vínculo, esto podría conducir a una mejor comprensión de ambas afecciones y contribuir a un diagnóstico y tratamiento más efectivos en el futuro.
+<br>
+Este artículo analizará algunas de las pruebas de un vínculo entre el autismo y la epilepsia.</p></li>
+                       <li><h3  style="white-space: normal">¿Cuál es el vínculo?</h3><p style="white-space: normal">
+El autismo y la epilepsia a menudo ocurren juntos. Se consideran condiciones diferentes, pero pueden tener algunas características en común.</p></li>
+                       <li><h3  style="white-space: normal">Epilepsia</h3><p style="white-space: normal">
+La epilepsia es un trastorno del cerebro. Es una condición neurológica que puede conducir a diferentes tipos de convulsiones.
+<br>
+En una persona con epilepsia, una convulsión ocurre cuando ciertos nervios cerebrales se disparan de manera anormal y causan efectos sobre los cuales la persona no tiene control.
+<br>
+Hay dos tipos principales de convulsiones.
+<br>
+Convulsiones focales: afectan solo una parte del cerebro. Alrededor del 60 por ciento de las personas con epilepsia tienen este tipo.
+<br>
+Durante una convulsión focal, una persona puede experimentar:
+<br><br>
+-cambios en la conciencia<br>
+-cambios sensoriales, donde sienten o perciben algo que parece no estar presente<br>
+-comportamientos repetitivos o inusuales, como parpadear, contraerse o caminar en círculos<br>
+-auras, o la sensación de que va a ocurrir una convulsión<br>
+-Convulsiones generalizadas: la actividad anormal afecta a ambos lados del cerebro.<br>
+
+<br>
+Lo siguiente puede ocurrir:
+<br>
+<br>
+-Convulsiones por ausencia: la persona parece no mirar nada, con ligeras contracciones musculares.<br>
+-Convulsiones tónicas: los músculos se ponen rígidos, especialmente en la espalda, los brazos y las piernas.<br>
+-Convulsiones clónicas: hay movimientos repetidos de sacudidas que afectan a ambos lados del cuerpo.<br>
+-Convulsiones atónicas: una pérdida de tono muscular hace que la persona se caiga o deje caer la cabeza.<br>
+-Convulsiones tónico-clónicas: esto puede implicar una combinación de síntomas.<br>
+              
+               </p>         
+                </li>
+                    </ul>
+			</div><!-- end page 1 content -->
+			
+			<div data-role="footer" data-position="fixed" style="display:none">
+			</div><!-- /footer -->
+		</div><!-- /page1 -->
+
+		
+<script type="text/javascript" src="cordova.js"></script><script type="text/javascript" src="js/jquery-1.11.1.min.js" id="cordova-jquery"></script><script type="text/javascript" id="jqm-trans-disable">
+		/* For having a faster transition */
+		$(document).on("mobileinit", function() {
+				$.mobile.defaultPageTransition = "none";
+				$.mobile.defaultDialogTransition = "none";
+		});
+		</script><script type="text/javascript" src="js/jquery-1.5.0.mobile.min.js"></script><script type="text/javascript" src="js/index.js"></script>
+		<script type="text/javascript">
+    <!--
+    function updateTime() {
+        var currentTime = new Date();
+        var hours = currentTime.getHours();
+        var minutes = currentTime.getMinutes();
+        var seconds = currentTime.getSeconds();
+        if (minutes < 10){
+            minutes = "0" + minutes;
+        }
+        if (seconds < 10){
+            seconds = "0" + seconds;
+        }
+        var v = hours + ":" + minutes + ":" + seconds + " ";
+        if(hours > 11){
+            v+="PM";
+        } else {
+            v+="AM"
+        }
+        setTimeout("updateTime()",1000);
+        document.getElementById('tReloj').innerHTML=v;
+    }
+    
+     
+      
+      //updateTime();
+
+      // assume you want to change to the 3rd tab after 3 seconds
+      function readMSG()
+            {
+               // $("#tabsMSG").tabs( "option", "active", 1 );
+                $("#readMessage").trigger( "click");
+               
+               
+            }
+            
+            function regresar()
+            {
+                window.location="index.html#page4";
+            }
+    
+    //-->
+</script>
+		
+		</body>
+</html>
