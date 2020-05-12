@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+		<link rel="stylesheet" type="text/css" href="js/jquery-1.5.0.mobile.min.css">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+		<style>
+		/* For avoiding title truncation in wp8 */
+		.ui-header .ui-title {
+				overflow: visible !important;
+		}
+		/* For fixing the absolute position issue for the default cordova gen page*/
+		#cjp-accordion1 .app {
+				left: 5px !important;
+				margin: 5px !important;
+				position: relative !important;
+		}
+		</style>
+        <title>AMENA | Epilepsia</title>
+        
+    </head>
+    <body>
+
+		<!-- page 1 -->
+		<div data-role="page" id="page1" style="background-color: transparent !important; background-image: url(img/bg-30.png); background-size: cover">
+			<div data-role="header" data-position="fixed">
+				<center><img src="img/logo-bco.png" style="max-height:50px"></center>
+			</div>
+			
+			<div class="ui-content" style="">
+			<form id="datos">
+			    <center>
+			    <img src="img/logo.png" style="max-width:250px;">
+			    <br><br><br>
+			    </center>
+			    <input type="hidden" name="accion" id="accion" value="inse-reg">
+				<!--imprimimos la lista-->
+				<ul data-role="listview" class="limpio">
+                    <li class="ui-field-contain limpio">
+                        <label for="correo">Correo:</label>
+                        <input type="text" name="correo" id="correo" value="" data-clear-btn="true" class="redondo">
+                    </li>
+                   <li class="ui-field-contain limpio">
+                    <label for="password">Password:</label>
+                    <input type="password" name="password" id="password" value="" data-clear-btn="true" class="redondo">
+                    </li>
+                    <li class="ui-field-contain limpio">
+                        
+                                <center>
+                                <button type="button" class="ui-btn ui-corner-all ui-btn-a" onclick="iniciarSesion()">Acceder</button>
+                                </center>
+                       
+                    </li>
+                </ul>
+				<!--imprimimos la lista-->
+				</form>
+			</div><!-- end page 1 content -->
+			
+			
+		</div><!-- /page1 -->
+
+		
+<script type="text/javascript" src="cordova.js"></script><script type="text/javascript" src="js/jquery-1.11.1.min.js" id="cordova-jquery"></script><script type="text/javascript" id="jqm-trans-disable">
+		/* For having a faster transition */
+		$(document).on("mobileinit", function() {
+				$.mobile.defaultPageTransition = "none";
+				$.mobile.defaultDialogTransition = "none";
+		});
+		</script><script type="text/javascript" src="js/jquery-1.5.0.mobile.min.js"></script><script type="text/javascript" src="js/index.js"></script>
+		<script type="text/javascript">
+    <!--
+    function updateTime() {
+        var currentTime = new Date();
+        var hours = currentTime.getHours();
+        var minutes = currentTime.getMinutes();
+        var seconds = currentTime.getSeconds();
+        if (minutes < 10){
+            minutes = "0" + minutes;
+        }
+        if (seconds < 10){
+            seconds = "0" + seconds;
+        }
+        var v = hours + ":" + minutes + ":" + seconds + " ";
+        if(hours > 11){
+            v+="PM";
+        } else {
+            v+="AM"
+        }
+        setTimeout("updateTime()",1000);
+        document.getElementById('tReloj').innerHTML=v;
+    }
+    
+     
+      
+      //updateTime();
+
+      // assume you want to change to the 3rd tab after 3 seconds
+      function readMSG()
+            {
+               // $("#tabsMSG").tabs( "option", "active", 1 );
+                $("#readMessage").trigger( "click");
+               
+               
+            }
+            
+            function regresar()
+            {
+                window.location="inicio.html#page3";
+            }
+    
+    //-->
+</script>
+		
+		</body>
+</html>

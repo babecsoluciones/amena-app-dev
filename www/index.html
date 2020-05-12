@@ -1,33 +1,8 @@
 <!DOCTYPE html>
-<!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
 
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
 <html>
     <head>
-        <!--
-        Customize this policy to fit your own app's needs. For more guidance, see:
-            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
-        Some notes:
-            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
-            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
-            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
-                * Enable inline JS: add 'unsafe-inline' to default-src
-        -->
+       
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
@@ -45,222 +20,27 @@
 				margin: 5px !important;
 				position: relative !important;
 		}
+            
+        
 		</style>
         <title>AMENA | Epilepsia</title>
         
     </head>
-    <body>
+    <body style="background-color: #562E78">
 
 		<!-- page 1 -->
-		<div data-role="page" id="page1">
-			<div data-role="header" data-position="fixed">
-				<h1>Bienvenido</h1>
-			</div>
-			
-			<div class="ui-content">
-			<center>
-				<img src="img/logo.png" style="max-width:50%">
-				<br><br>
-				<span id="tUsuario">{Usuario}</span><br><br>
-				
-				<div id="xhrNoticias">
-                <br>
-				    <ul data-role="listview">
-                        <li><a href="#" onclick="document.location='noticia.html'">Noticia 10</a></li>
-                        <li><a href="#" onclick="document.location='noticia.html'">Noticia 09</a></li>
-                        <li><a href="#" onclick="document.location='noticia.html'">Noticia 08</a></li>
-                        <li><a href="#" onclick="document.location='noticia.html'">Noticia 07</a></li>
-                        <li><a href="#" onclick="document.location='noticia.html'">Noticia 06</a></li>
-                    </ul>
-				</div>
-				</center>
+		<div data-role="page" id="page1" style="background-color: #562E78">
+			<div style="background-color: #562E78">
+            <center>
+            <h3 style="color:#FFF;">Cargando...</h3>
+            <br>
+			    <img id="imagen" class="loader" style="max-width:300px; width:75%;">
+			 </center>
 			</div><!-- end page 1 content -->
 			
-			<div data-role="footer" data-position="fixed">
-				<div data-role="navbar">
-					<ul>
-						<li><a href="#page2"><i class="fas fa-inbox"></i><br><small>Mensajes</small></a></li>
-						<li><a href="#page3"><i class="far fa-newspaper"></i><br><small>Noticias</small></a></li>
-						<li><a href="#page1" class="ui-btn-active ui-state-persist"><i class="fas fa-tachometer-alt"></i><br><small>Inicio</small></a></li>
-						<li><a href="#page4"><i class="fas fa-th"></i><br><small>Blog</small></a></li>
-						<li><a href="#page5"><i class="fas fa-id-card"></i><br><small>Perfil</small></a></li>
-					</ul>
-				</div><!-- /navbar -->
-			</div><!-- /footer -->
+			
 		</div><!-- /page1 -->
 
-				<!-- page 2 -->
-		<div data-role="page" id="page2">
-			<div data-role="header" data-position="fixed">
-				<h1>Mensajes</h1>
-			</div>
-			
-			<div class="ui-content">
-				<h3>Entrada</h3>
-				<br>
-    <ul data-role="listview" style="overflow-y:scroll;">
-        <li><a href="#" onclick="readMSG()">Mensaje 01</a></li>
-        <li><a href="#" onclick="readMSG()">Mensaje 02</a></li>
-        <li><a href="#" onclick="readMSG()">Mensaje 03</a></li>
-        <li><a href="#" onclick="readMSG()">Mensaje 04</a></li>
-        <li><a href="#" onclick="readMSG()">Mensaje 05</a></li>
-        <li><a href="#" onclick="readMSG()">Mensaje 06</a></li>
-        <li><a href="#" onclick="readMSG()">Mensaje 07</a></li>
-        <li><a href="#" onclick="readMSG()">Mensaje 08</a></li>
-        <li><a href="#" onclick="readMSG()">Mensaje 09</a></li>
-        <li><a href="#" onclick="readMSG()">Mensaje 10</a></li>
-        <li><a href="#" onclick="readMSG()">Mensaje 11</a></li>
-        <li><a href="#" onclick="readMSG()">Mensaje 12</a></li>
-                    </ul>
-			</div><!-- end page 2 content -->
-			
-			<div data-role="footer" data-position="fixed">
-				<div data-role="navbar">
-					<ul>
-						<li><a href="#page2" class="ui-btn-active ui-state-persist"><i class="fas fa-inbox"></i><br><small>Mensajes</small></a></li>
-						<li><a href="#page3"><i class="far fa-newspaper"></i><br><small>Noticias</small></a></li>
-						<li><a href="#page1"><i class="fas fa-tachometer-alt"></i><br><small>Inicio</small></a></li>
-						<li><a href="#page4"><i class="fas fa-th"></i><br><small>Blog</small></a></li>
-						<li><a href="#page5"><i class="fas fa-id-card"></i><br><small>Perfil</small></a></li>
-					</ul>
-				</div><!-- /navbar -->
-			</div><!-- /footer -->
-		</div><!-- /page2 -->
-		
-				<!-- page 3 -->
-		<div data-role="page" id="page3">
-			<div data-role="header" data-position="fixed">
-				<h1>Noticias</h1>
-			</div>
-			
-			<div class="ui-content"  style="overflow-y: scroll;">
-				
-    <ul data-role="listview" data-filter="true" data-filter-placeholder="Buscar" data-inset="true">
-        <li><a href="#" onclick="document.location='noticia.html'">Noticia 10</a></li>
-        <li><a href="#" onclick="document.location='noticia.html'">Noticia 09</a></li>
-        <li><a href="#" onclick="document.location='noticia.html'">Noticia 08</a></li>
-        <li><a href="#" onclick="document.location='noticia.html'">Noticia 07</a></li>
-        <li><a href="#" onclick="document.location='noticia.html'">Noticia 06</a></li>
-        <li><a href="#" onclick="document.location='noticia.html'">Noticia 05</a></li>
-        <li><a href="#" onclick="document.location='noticia.html'">Noticia 04</a></li>
-        <li><a href="#" onclick="document.location='noticia.html'">Noticia 03</a></li>
-        <li><a href="#" onclick="document.location='noticia.html'">Noticia 02</a></li>
-        <li><a href="#" onclick="document.location='noticia.html'">Noticia 01</a></li>
-    </ul>
-   
-			</div><!-- end page 3 content -->
-			
-			<div data-role="footer" data-position="fixed">
-				<div data-role="navbar">
-					<ul>
-						<li><a href="#page2"><i class="fas fa-inbox"></i><br><small>Mensajes</small></a></li>
-						<li><a href="#page3" class="ui-btn-active ui-state-persist"><i class="far fa-newspaper"></i><br><small>Noticias</small></a></li>
-						<li><a href="#page1"><i class="fas fa-tachometer-alt"></i><br><small>Inicio</small></a></li>
-						<li><a href="#page4"><i class="fas fa-th"></i><br><small>Blog</small></a></li>
-						<li><a href="#page5"><i class="fas fa-id-card"></i><br><small>Perfil</small></a></li>
-					</ul>
-				</div><!-- /navbar -->
-			</div><!-- /footer -->
-		</div><!-- /page3 -->
-            
-            <!-- page 4 -->
-		<div data-role="page" id="page4">
-			<div data-role="header" data-position="fixed">
-				<h1>Blog</h1>
-			</div>
-			
-			<div class="ui-content" style="overflow-y:scroll">
-				<!--generamos tabs-->
-				<ul data-role="listview" data-inset="true">
-    <li><a href="#" onclick="document.location='blog.html'"><img src="img/logo.png"><h2>Publicacion</h2><p>{fecha}</p></a></li>
-    <li><a href="#" onclick="document.location='blog.html'"><img src="img/logo.png"><h2>Publicacion</h2><p>{fecha}</p></a></li>
-    <li><a href="#" onclick="document.location='blog.html'"><img src="img/logo.png"><h2>Publicacion</h2><p>{fecha}</p></a></li>
-    <li><a href="#" onclick="document.location='blog.html'"><img src="img/logo.png"><h2>Publicacion</h2><p>{fecha}</p></a></li>
-    <li><a href="#" onclick="document.location='blog.html'"><img src="img/logo.png"><h2>Publicacion</h2><p>{fecha}</p></a></li>
-    <li><a href="#" onclick="document.location='blog.html'"><img src="img/logo.png"><h2>Publicacion</h2><p>{fecha}</p></a></li>
-    <li><a href="#" onclick="document.location='blog.html'"><img src="img/logo.png"><h2>Publicacion</h2><p>{fecha}</p></a></li>
-    
-</ul>
-				<!--generamos tabs-->
-			</div><!-- end page 1 content -->
-			
-			<div data-role="footer" data-position="fixed">
-				<div data-role="navbar">
-					<ul>
-						<li><a href="#page2"><i class="fas fa-inbox"></i><br><small>Mensajes</small></a></li>
-						<li><a href="#page3"><i class="far fa-newspaper"></i><br><small>Noticias</small></a></li>
-						<li><a href="#page1"><i class="fas fa-tachometer-alt"></i><br><small>Inicio</small></a></li>
-						<li><a href="#page4" class="ui-btn-active ui-state-persist"><i class="fas fa-th"></i><br><small>Blog</small></a></li>
-						<li><a href="#page5"><i class="fas fa-id-card"></i><br><small>Perfil</small></a></li>
-					</ul>
-				</div><!-- /navbar -->
-			</div><!-- /footer -->
-		</div><!-- /page4 -->
-            
-				<!-- page 5 -->
-		<div data-role="page" id="page5">
-			<div data-role="header" data-position="fixed">
-				<h1>Perfil</h1>
-			</div>
-			
-			<div class="ui-content">
-				<!--imprimismo formulario-->
-				<form>
-    <ul data-role="listview" data-inset="true">
-        <li class="ui-field-contain">
-            <label for="name2">Nombre:</label>
-            <input type="text" name="name2" id="name2" value="" data-clear-btn="true">
-        </li>
-        <li class="ui-field-contain">
-            <label for="name2">Apellidos:</label>
-            <input type="text" name="name2" id="name2" value="" data-clear-btn="true">
-        </li>
-        <li class="ui-field-contain">
-            <label for="slider2">Edad:</label>
-            <input type="range" name="slider2" id="slider2" value="5" min="5" max="100" data-highlight="true">
-        </li>
-        <li class="ui-field-contain">
-            <label for="select-choice-1" class="select">Sexo:</label>
-            <select name="select-choice-1" id="select-choice-1">
-                <option value="">Seleccione...</option>
-                <option value="M">Masculino</option>
-                <option value="F">Femenino</option>
-            </select>
-        </li>
-        <li class="ui-field-contain">
-            <label for="name2">E-mail:</label>
-            <input type="text" name="name2" id="name2" value="" data-clear-btn="true">
-        </li>
-        <li class="ui-field-contain">
-            <label for="name2">Tel&eacute;fono:</label>
-            <input type="text" name="name2" id="name2" value="" data-clear-btn="true">
-        </li>
-        <li class="ui-field-contain">
-            <label for="name2">Password:</label>
-            <input type="password" name="name2" id="name2" value="" data-clear-btn="true">
-        </li>
-        <li class="ui-body ui-body-b">
-            <fieldset class="ui-grid-a">
-                    <button type="submit" class="ui-btn ui-corner-all ui-btn-a">Guardar</button>
-            </fieldset>
-        </li>
-    </ul>
-</form>
-				<!--imprimismo formulario-->
-			</div><!-- end page 3 content -->
-			
-			<div data-role="footer" data-position="fixed">
-				<div data-role="navbar">
-					<ul>
-						<li><a href="#page2"><i class="fas fa-inbox"></i><br><small>Mensajes</small></a></li>
-						<li><a href="#page3"><i class="far fa-newspaper"></i><br><small>Noticias</small></a></li>
-						<li><a href="#page1"><i class="fas fa-tachometer-alt"></i><br><small>Inicio</small></a></li>
-						<li><a href="#page4"><i class="fas fa-th"></i><br><small>Blog</small></a></li>
-						<li><a href="#page5" class="ui-btn-active ui-state-persist"><i class="fas fa-id-card"></i><br><small>Perfil</small></a></li>
-					</ul>
-				</div><!-- /navbar -->
-			</div><!-- /footer -->
-		</div><!-- /page3 -->
 		
 <script type="text/javascript" src="cordova.js"></script><script type="text/javascript" src="js/jquery-1.11.1.min.js" id="cordova-jquery"></script><script type="text/javascript" id="jqm-trans-disable">
 		/* For having a faster transition */
@@ -270,43 +50,26 @@
 		});
 		</script><script type="text/javascript" src="js/jquery-1.5.0.mobile.min.js"></script><script type="text/javascript" src="js/index.js"></script>
 		<script type="text/javascript">
-    <!--
-    function updateTime() {
-        var currentTime = new Date();
-        var hours = currentTime.getHours();
-        var minutes = currentTime.getMinutes();
-        var seconds = currentTime.getSeconds();
-        if (minutes < 10){
-            minutes = "0" + minutes;
-        }
-        if (seconds < 10){
-            seconds = "0" + seconds;
-        }
-        var v = hours + ":" + minutes + ":" + seconds + " ";
-        if(hours > 11){
-            v+="PM";
-        } else {
-            v+="AM"
-        }
-        setTimeout("updateTime()",1000);
-        document.getElementById('tReloj').innerHTML=v;
-    }
     
-     
-      
-      //updateTime();
-
-      // assume you want to change to the 3rd tab after 3 seconds
-      function readMSG()
+            function cambiarImagen()
             {
-               // $("#tabsMSG").tabs( "option", "active", 1 );
-                //$("#readMessage").trigger( "click");
-                document.location="chat.html#page1";
-               
-               
+                document.getElementById('imagen').src = "pro/Bersa.png";
+                setTimeout(function(){
+                    document.getElementById('imagen').src = "pro/Biocodex.png";
+                },3000);
+                setTimeout(function(){
+                    document.getElementById('imagen').src = "pro/CentroAura.png";
+                },6000);
+                setTimeout(function(){
+                    document.getElementById('imagen').src = "pro/InvoiceLaguna.png";
+                },9000);
+                setTimeout(function(){
+                    document.location = "log/index.html";
+                },12000);
             }
-    
-    //-->
+            
+            cambiarImagen();
+            
 </script>
 		
 		</body>
