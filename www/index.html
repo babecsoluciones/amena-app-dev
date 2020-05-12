@@ -32,7 +32,7 @@
 		<div data-role="page" id="page1" style="background-color: #562E78">
 			<div style="background-color: #562E78">
             <center>
-            <h3 style="color:#FFF;">Cargando...</h3>
+            <img src="pro/cargando.png" style="max-height:17px; margin-top:25px; pagging-bottom:35px;">
             <br>
 			    <img id="imagen" class="loader" style="max-width:300px; width:75%;">
 			 </center>
@@ -53,19 +53,17 @@
     
             function cambiarImagen()
             {
-                document.getElementById('imagen').src = "pro/Bersa.png";
-                setTimeout(function(){
-                    document.getElementById('imagen').src = "pro/Biocodex.png";
-                },3000);
-                setTimeout(function(){
-                    document.getElementById('imagen').src = "pro/CentroAura.png";
-                },6000);
+                document.getElementById('imagen').src = "pro/CentroAura.png";
                 setTimeout(function(){
                     document.getElementById('imagen').src = "pro/InvoiceLaguna.png";
-                },9000);
+                },3000);
+                setTimeout(function(){
+                    document.getElementById('imagen').src = "pro/combinado.png";
+                },6000);
                 setTimeout(function(){
                     document.location = "log/index.html";
-                },12000);
+                },9000);
+                
             }
             
             cambiarImagen();
