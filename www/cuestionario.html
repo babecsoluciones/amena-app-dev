@@ -54,66 +54,67 @@
 		<!-- page 1 -->
 		<div data-role="page" id="page1">
 			<div data-role="header" data-position="fixed">
-			<a href="#" class="ui-btn-left btn-navegacion" onclick="regresar()"><i class="fas fa-arrow-left"></i></a>
+			<a href="#" class="ui-btn-left btn-navegacion" onclick="document.location='inicio.html#page3'"><i class="fas fa-times"></i></a>
+			
 				<center><img src="img/logo-bco.png" style="max-height:50px"></center>
 			</div>
 			
 			<div class="ui-content">
-			<ul data-role="listview">
-                        <li><h3  style="white-space: normal">Epilepsia y autismo: ¿Existe un vínculo?</h3><p style="white-space: normal">
-La epilepsia y el autismo son condiciones relativamente comunes que pueden tener un gran impacto en la vida de una persona. A menudo ocurren juntos, y los investigadores han estado buscando un posible vínculo entre ellos.
-<br>
-Los Centros para el Control y la Prevención de Enfermedades (CDC) estiman que cierto grado de autismo afecta a 1 de cada 59 niños, o el 1.7 por ciento de todos los niños en los Estados Unidos.
-<br>
-En 2015, el 1.2 por ciento de la población en los EE. UU. Tenía epilepsia activa, según los CDC.
-<br>
-Si los científicos encuentran un vínculo, esto podría conducir a una mejor comprensión de ambas afecciones y contribuir a un diagnóstico y tratamiento más efectivos en el futuro.
-<br>
-Este artículo analizará algunas de las pruebas de un vínculo entre el autismo y la epilepsia.</p></li>
-                       <li><h3  style="white-space: normal">¿Cuál es el vínculo?</h3><p style="white-space: normal">
-El autismo y la epilepsia a menudo ocurren juntos. Se consideran condiciones diferentes, pero pueden tener algunas características en común.</p></li>
-                       <li><h3  style="white-space: normal">Epilepsia</h3><p style="white-space: normal">
-La epilepsia es un trastorno del cerebro. Es una condición neurológica que puede conducir a diferentes tipos de convulsiones.
-<br>
-En una persona con epilepsia, una convulsión ocurre cuando ciertos nervios cerebrales se disparan de manera anormal y causan efectos sobre los cuales la persona no tiene control.
-<br>
-Hay dos tipos principales de convulsiones.
-<br>
-Convulsiones focales: afectan solo una parte del cerebro. Alrededor del 60 por ciento de las personas con epilepsia tienen este tipo.
-<br>
-Durante una convulsión focal, una persona puede experimentar:
-<br><br>
--cambios en la conciencia<br>
--cambios sensoriales, donde sienten o perciben algo que parece no estar presente<br>
--comportamientos repetitivos o inusuales, como parpadear, contraerse o caminar en círculos<br>
--auras, o la sensación de que va a ocurrir una convulsión<br>
--Convulsiones generalizadas: la actividad anormal afecta a ambos lados del cerebro.<br>
-
-<br>
-Lo siguiente puede ocurrir:
-<br>
-<br>
--Convulsiones por ausencia: la persona parece no mirar nada, con ligeras contracciones musculares.<br>
--Convulsiones tónicas: los músculos se ponen rígidos, especialmente en la espalda, los brazos y las piernas.<br>
--Convulsiones clónicas: hay movimientos repetidos de sacudidas que afectan a ambos lados del cuerpo.<br>
--Convulsiones atónicas: una pérdida de tono muscular hace que la persona se caiga o deje caer la cabeza.<br>
--Convulsiones tónico-clónicas: esto puede implicar una combinación de síntomas.<br>
-              
-               </p>         
-                </li>
-                    </ul>
-			</div><!-- end page 1 content -->
 			
-			<div data-role="footer" data-position="fixed">
+			<div class="ui-content" style="background-image: url(img/bg-30.png); background-size: cover; text-align: center; color: #000; width:105%; margin-left:-20px; margin-top:-20px"><br>
+	    <img src="img/logo.png" style="max-width:50%">
+				<br><br>
+				<span id="tUsuario">Por favor, completa el siguiente formulario</span><br><br>
+	</div>	
+        
 			<center>
 				
-                    <button type="button" style="max-width:95%; border-radiud:10px;" onclick="document.location='cuestionario.html'">Me Interesa</button>
-            
-            </center>
-			</div><!-- /footer -->
+				<form>
+    <ul data-role="listview" data-inset="true">
+        <li class="ui-field-contain">
+           <label>Pregunta 1</label>
+            <label><input type="radio" name="preg1"> Respuesta 1</label>
+            <label><input type="radio" name="preg1"> Respuesta 2</label>
+            <label><input type="radio" name="preg1"> Respuesta 3</label>
+        </li>
+        <li class="ui-field-contain">
+           <label>Pregunta 2</label>
+            <label><input type="radio" name="preg2"> Respuesta 1</label>
+            <label><input type="radio" name="preg2"> Respuesta 2</label>
+            <label><input type="radio" name="preg2"> Respuesta 3</label>
+        </li>
+        <li class="ui-field-contain">
+           <label>Pregunta 3</label>
+            <label><input type="radio" name="preg3"> Respuesta 1</label>
+            <label><input type="radio" name="preg3"> Respuesta 2</label>
+            <label><input type="radio" name="preg3"> Respuesta 3</label>
+        </li>
+        <li class="ui-field-contain">
+           <label>Pregunta 4</label>
+            <label><input type="radio" name="preg4"> Respuesta 1</label>
+            <label><input type="radio" name="preg4"> Respuesta 2</label>
+            <label><input type="radio" name="preg4"> Respuesta 3</label>
+        </li>
+        <li class="ui-field-contain">
+           <label>Pregunta 5</label>
+            <label><input type="radio" name="preg5"> Respuesta 1</label>
+            <label><input type="radio" name="preg5"> Respuesta 2</label>
+            <label><input type="radio" name="preg5"> Respuesta 3</label>
+        </li>
+        
+        <li class="ui-body ui-body-b">
+            <fieldset class="ui-grid-a">
+                    <button type="button" class="ui-btn ui-corner-all ui-btn-a" onclick="document.location='inicio.html#page2'">Guardar</button>
+            </fieldset>
+        </li>
+    </ul>
+</form>
+				</center>
+			</div><!-- end page 1 content -->
+			
+			
 		</div><!-- /page1 -->
 
-		
 <script type="text/javascript" src="cordova.js"></script><script type="text/javascript" src="js/jquery-1.11.1.min.js" id="cordova-jquery"></script><script type="text/javascript" id="jqm-trans-disable">
 		/* For having a faster transition */
 		$(document).on("mobileinit", function() {
@@ -152,14 +153,10 @@ Lo siguiente puede ocurrir:
       function readMSG()
             {
                // $("#tabsMSG").tabs( "option", "active", 1 );
-                $("#readMessage").trigger( "click");
+                //$("#readMessage").trigger( "click");
+                document.location="chat.html#page1";
                
                
-            }
-            
-            function regresar()
-            {
-                window.location="inicio.html#page3";
             }
     
     //-->
