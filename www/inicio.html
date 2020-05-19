@@ -45,6 +45,21 @@
 				margin: 5px !important;
 				position: relative !important;
 		}
+            
+        .ajax-loader {
+          visibility: hidden;
+          background-color: rgba(241,242,243);
+          position: absolute;
+          z-index: +100 !important;
+          width: 100%;
+          height:100%;
+        }
+        
+        /*.ajax-loader img {
+          position: relative;
+          top:30%;
+          left:25%;
+        }*/
 		</style>
         <title>AMENA | Epilepsia</title>
         
@@ -68,49 +83,8 @@
 			<center>
 				
 				<div id="xhrNoticias">
-				    <ul data-role="listview">
-                       <li><img src="img/logo.png">
-                       <table width="100%"><tr><td colspan="2"><h2>Noticia 10</h2></td></tr>
-                       <tr><td>09/05/2020</td><td align="right">
-                           <a href="#" class="btn-leer" onclick="document.location='noticia.html'"><i class="fas fa-eye btn-leer"></i></a>
-                       </td></tr>
-                       </table>
-                       </li>
-                       <li><img src="img/logo.png">
-                       <table width="100%"><tr><td colspan="2"><h2>Noticia 09</h2></td></tr>
-                       <tr><td>08/05/2020</td><td align="right">
-                           <a href="#" class="btn-leer" onclick="document.location='noticia.html'"><i class="fas fa-eye btn-leer"></i></a>
-                       </td></tr>
-                       </table>
-                       </li>
-                       <li><img src="img/logo.png">
-                       <table width="100%"><tr><td colspan="2"><h2>Noticia 08</h2></td></tr>
-                       <tr><td>08/05/2020</td><td align="right">
-                           <a href="#" class="btn-leer" onclick="document.location='noticia.html'"><i class="fas fa-eye btn-leer"></i></a>
-                       </td></tr>
-                       </table>
-                       </li>
-                       <li><img src="img/logo.png">
-                       <table width="100%"><tr><td colspan="2"><h2>Noticia 07</h2></td></tr>
-                       <tr><td>30/04/2020</td><td align="right">
-                           <a href="#" class="btn-leer" onclick="document.location='noticia.html'"><i class="fas fa-eye btn-leer"></i></a>
-                       </td></tr>
-                       </table>
-                       </li>
-                       <li><img src="img/logo.png">
-                       <table width="100%"><tr><td colspan="2"><h2>Noticia 06</h2></td></tr>
-                       <tr><td>21/04/2020</td><td align="right">
-                           <a href="#" class="btn-leer" onclick="document.location='noticia.html'"><i class="fas fa-eye btn-leer"></i></a>
-                       </td></tr>
-                       </table>
-                       </li>
-                       <li><img src="img/logo.png">
-                       <table width="100%"><tr><td colspan="2"><h2>Noticia 05</h2></td></tr>
-                       <tr><td>20/04/2020</td><td align="right">
-                           <a href="#" class="btn-leer" onclick="document.location='noticia.html'"><i class="fas fa-eye btn-leer"></i></a>
-                       </td></tr>
-                       </table>
-                       </li>
+                <form id="frmInicio"><input type="hidden" name="accion" value="ini-con"></form>
+				    <ul data-role="listview" id="ini-con">
                         
                     </ul>
 				</div>
@@ -179,50 +153,12 @@
 			<div class="ui-content"  style="overflow-y: scroll;">
 	<div class="ui-content" style="background-image: url(img/bg-acuarela.jpg); background-size: cover; text-align: center; color: #000; width:105%; margin-left:-20px; margin-top:-20px"><br>
 	    <h3>NOTICIAS</h3><br>
-	</div>			
-    <ul data-role="listview" data-filter="true" data-filter-placeholder="Buscar" data-inset="true">
-        <li><img src="img/logo.png">
-                       <table width="100%"><tr><td colspan="2"><h2>Noticia 10</h2></td></tr>
-                       <tr><td>09/05/2020</td><td align="right">
-                           <a href="#" class="btn-leer" onclick="document.location='noticia.html'"><i class="fas fa-eye btn-leer"></i></a>
-                       </td></tr>
-                       </table>
-                       </li>
-                       <li><img src="img/logo.png">
-                       <table width="100%"><tr><td colspan="2"><h2>Noticia 09</h2></td></tr>
-                       <tr><td>08/05/2020</td><td align="right">
-                           <a href="#" class="btn-leer" onclick="document.location='noticia.html'"><i class="fas fa-eye btn-leer"></i></a>
-                       </td></tr>
-                       </table>
-                       </li>
-                       <li><img src="img/logo.png">
-                       <table width="100%"><tr><td colspan="2"><h2>Noticia 08</h2></td></tr>
-                       <tr><td>08/05/2020</td><td align="right">
-                           <a href="#" class="btn-leer" onclick="document.location='noticia.html'"><i class="fas fa-eye btn-leer"></i></a>
-                       </td></tr>
-                       </table>
-                       </li>
-                       <li><img src="img/logo.png">
-                       <table width="100%"><tr><td colspan="2"><h2>Noticia 07</h2></td></tr>
-                       <tr><td>30/04/2020</td><td align="right">
-                           <a href="#" class="btn-leer" onclick="document.location='noticia.html'"><i class="fas fa-eye btn-leer"></i></a>
-                       </td></tr>
-                       </table>
-                       </li>
-                       <li><img src="img/logo.png">
-                       <table width="100%"><tr><td colspan="2"><h2>Noticia 06</h2></td></tr>
-                       <tr><td>21/04/2020</td><td align="right">
-                           <a href="#" class="btn-leer" onclick="document.location='noticia.html'"><i class="fas fa-eye btn-leer"></i></a>
-                       </td></tr>
-                       </table>
-                       </li>
-                       <li><img src="img/logo.png">
-                       <table width="100%"><tr><td colspan="2"><h2>Noticia 05</h2></td></tr>
-                       <tr><td>20/04/2020</td><td align="right">
-                           <a href="#" class="btn-leer" onclick="document.location='noticia.html'"><i class="fas fa-eye btn-leer"></i></a>
-                       </td></tr>
-                       </table>
-                       </li>
+	</div>	
+   
+   		<form id="frmNoticias"><input type="hidden" name="accion" value="not-con"></form>
+   						
+    <ul data-role="listview" data-filter="true" data-filter-placeholder="Buscar" data-inset="true" id="not-con">
+        
         
     </ul>
    
@@ -248,17 +184,11 @@
 			</div>
 			
 			<div class="ui-content" style="overflow-y:scroll">
+			<form id="frmBlog"><input type="hidden" name="accion" value="blg-con"></form>
 				<!--generamos tabs-->
-				<ul data-role="listview" data-inset="true">
-    <li><a href="#" onclick="document.location='blog.html'"><img src="img/logo.png"><h2>Publicacion</h2><p>09/05/2020</p></a></li>
-    <li><a href="#" onclick="document.location='blog.html'"><img src="img/logo.png"><h2>Publicacion</h2><p>09/05/2020</p></a></li>
-    <li><a href="#" onclick="document.location='blog.html'"><img src="img/logo.png"><h2>Publicacion</h2><p>09/05/2020</p></a></li>
-    <li><a href="#" onclick="document.location='blog.html'"><img src="img/logo.png"><h2>Publicacion</h2><p>09/05/2020</p></a></li>
-    <li><a href="#" onclick="document.location='blog.html'"><img src="img/logo.png"><h2>Publicacion</h2><p>09/05/2020</p></a></li>
-    <li><a href="#" onclick="document.location='blog.html'"><img src="img/logo.png"><h2>Publicacion</h2><p>09/05/2020</p></a></li>
-    <li><a href="#" onclick="document.location='blog.html'"><img src="img/logo.png"><h2>Publicacion</h2><p>09/05/2020</p></a></li>
+				<ul data-role="listview" data-inset="true" id="blg-con">
     
-</ul>
+                </ul>
 				<!--generamos tabs-->
 			</div><!-- end page 1 content -->
 			
@@ -340,6 +270,19 @@
 			</div><!-- /footer -->
 		</div><!-- /page3 -->
 		
+		<!--loader-->
+		<div class="ajax-loader">
+         <table width="100%" height="100%">
+             <tr>
+                 <td align="center" valign="middle">
+                     <img src="js/images/ajax-loader.gif" class="img-responsive" width="25" height="25" />
+                 </td>
+             </tr>
+         </table>
+          
+        </div>
+		<!--loader-->
+		
 <script type="text/javascript" src="cordova.js"></script><script type="text/javascript" src="js/jquery-1.11.1.min.js" id="cordova-jquery"></script><script type="text/javascript" id="jqm-trans-disable">
 		/* For having a faster transition */
 		$(document).on("mobileinit", function() {
@@ -347,35 +290,29 @@
 				$.mobile.defaultDialogTransition = "none";
 		});
 		</script><script type="text/javascript" src="js/jquery-1.5.0.mobile.min.js"></script><script type="text/javascript" src="js/index.js"></script>
-		<script type="text/javascript">
-    <!--
-    function updateTime() {
-        var currentTime = new Date();
-        var hours = currentTime.getHours();
-        var minutes = currentTime.getMinutes();
-        var seconds = currentTime.getSeconds();
-        if (minutes < 10){
-            minutes = "0" + minutes;
-        }
-        if (seconds < 10){
-            seconds = "0" + seconds;
-        }
-        var v = hours + ":" + minutes + ":" + seconds + " ";
-        if(hours > 11){
-            v+="PM";
-        } else {
-            v+="AM"
-        }
-        setTimeout("updateTime()",1000);
-        document.getElementById('tReloj').innerHTML=v;
-    }
-    
-     
-      
-      //updateTime();
-
-      // assume you want to change to the 3rd tab after 3 seconds
-      function readMSG()
+		
+    <script type="text/javascript" src="js/jquery.serializejson.js"></script>
+		<script type="text/javascript" src="js/aplicacion.js"></script>
+		<script language="javascript">
+            var activePage;
+            var currentPage;
+            var getPage;
+            
+        $(document).ready(function() {
+            
+            cargarInicio();
+            cargarBlog();
+            cargarNoticias();
+        });
+            
+        $(window).scroll(function (event) {
+            var scroll = $(window).scrollTop();
+            // Do something
+            //alert(scroll);
+        });
+            
+         
+            function readMSG()
             {
                // $("#tabsMSG").tabs( "option", "active", 1 );
                 //$("#readMessage").trigger( "click");
@@ -383,9 +320,8 @@
                
                
             }
-    
-    //-->
-</script>
+            
+    </script>
 		
 		</body>
 </html>

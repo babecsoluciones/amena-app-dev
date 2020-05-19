@@ -45,6 +45,21 @@
 				margin: 5px !important;
 				position: relative !important;
 		}
+            
+        .ajax-loader {
+          visibility: hidden;
+          background-color: rgba(241,242,243);
+          position: absolute;
+          z-index: +100 !important;
+          width: 100%;
+          height:100%;
+        }
+        
+        /*.ajax-loader img {
+          position: relative;
+          top:30%;
+          left:25%;
+        }*/
 		</style>
         <title>AMENA | Epilepsia</title>
         
@@ -63,48 +78,9 @@
 			<center>
 			    <img src="img/logo.png" style="max-width:550px; width:95%;"><br><br>
 			</center>
-			<ul data-role="listview">
-                        <li><h3  style="white-space: normal">Epilepsia y autismo: ¿Existe un vínculo?</h3><p style="white-space: normal">
-La epilepsia y el autismo son condiciones relativamente comunes que pueden tener un gran impacto en la vida de una persona. A menudo ocurren juntos, y los investigadores han estado buscando un posible vínculo entre ellos.
-<br>
-Los Centros para el Control y la Prevención de Enfermedades (CDC) estiman que cierto grado de autismo afecta a 1 de cada 59 niños, o el 1.7 por ciento de todos los niños en los Estados Unidos.
-<br>
-En 2015, el 1.2 por ciento de la población en los EE. UU. Tenía epilepsia activa, según los CDC.
-<br>
-Si los científicos encuentran un vínculo, esto podría conducir a una mejor comprensión de ambas afecciones y contribuir a un diagnóstico y tratamiento más efectivos en el futuro.
-<br>
-Este artículo analizará algunas de las pruebas de un vínculo entre el autismo y la epilepsia.</p></li>
-                       <li><h3  style="white-space: normal">¿Cuál es el vínculo?</h3><p style="white-space: normal">
-El autismo y la epilepsia a menudo ocurren juntos. Se consideran condiciones diferentes, pero pueden tener algunas características en común.</p></li>
-                       <li><h3  style="white-space: normal">Epilepsia</h3><p style="white-space: normal">
-La epilepsia es un trastorno del cerebro. Es una condición neurológica que puede conducir a diferentes tipos de convulsiones.
-<br>
-En una persona con epilepsia, una convulsión ocurre cuando ciertos nervios cerebrales se disparan de manera anormal y causan efectos sobre los cuales la persona no tiene control.
-<br>
-Hay dos tipos principales de convulsiones.
-<br>
-Convulsiones focales: afectan solo una parte del cerebro. Alrededor del 60 por ciento de las personas con epilepsia tienen este tipo.
-<br>
-Durante una convulsión focal, una persona puede experimentar:
-<br><br>
--cambios en la conciencia<br>
--cambios sensoriales, donde sienten o perciben algo que parece no estar presente<br>
--comportamientos repetitivos o inusuales, como parpadear, contraerse o caminar en círculos<br>
--auras, o la sensación de que va a ocurrir una convulsión<br>
--Convulsiones generalizadas: la actividad anormal afecta a ambos lados del cerebro.<br>
-
-<br>
-Lo siguiente puede ocurrir:
-<br>
-<br>
--Convulsiones por ausencia: la persona parece no mirar nada, con ligeras contracciones musculares.<br>
--Convulsiones tónicas: los músculos se ponen rígidos, especialmente en la espalda, los brazos y las piernas.<br>
--Convulsiones clónicas: hay movimientos repetidos de sacudidas que afectan a ambos lados del cuerpo.<br>
--Convulsiones atónicas: una pérdida de tono muscular hace que la persona se caiga o deje caer la cabeza.<br>
--Convulsiones tónico-clónicas: esto puede implicar una combinación de síntomas.<br>
-              
-               </p>         
-                </li>
+			<form id="frmDetalle"><input type="hidden" name="accion" value="not-det"><input type="hidden" name="codigo" id="codigo"></form>
+			<ul data-role="listview" id="not-det">
+                        
                     </ul>
 			</div><!-- end page 1 content -->
 			
@@ -112,6 +88,18 @@ Lo siguiente puede ocurrir:
 			</div><!-- /footer -->
 		</div><!-- /page1 -->
 
+		<!--loader-->
+		<div class="ajax-loader">
+         <table width="100%" height="100%">
+             <tr>
+                 <td align="center" valign="middle">
+                     <img src="js/images/ajax-loader.gif" class="img-responsive" width="25" height="25" />
+                 </td>
+             </tr>
+         </table>
+          
+        </div>
+		<!--loader-->
 		
 <script type="text/javascript" src="cordova.js"></script><script type="text/javascript" src="js/jquery-1.11.1.min.js" id="cordova-jquery"></script><script type="text/javascript" id="jqm-trans-disable">
 		/* For having a faster transition */
@@ -120,49 +108,39 @@ Lo siguiente puede ocurrir:
 				$.mobile.defaultDialogTransition = "none";
 		});
 		</script><script type="text/javascript" src="js/jquery-1.5.0.mobile.min.js"></script><script type="text/javascript" src="js/index.js"></script>
-		<script type="text/javascript">
-    <!--
-    function updateTime() {
-        var currentTime = new Date();
-        var hours = currentTime.getHours();
-        var minutes = currentTime.getMinutes();
-        var seconds = currentTime.getSeconds();
-        if (minutes < 10){
-            minutes = "0" + minutes;
-        }
-        if (seconds < 10){
-            seconds = "0" + seconds;
-        }
-        var v = hours + ":" + minutes + ":" + seconds + " ";
-        if(hours > 11){
-            v+="PM";
-        } else {
-            v+="AM"
-        }
-        setTimeout("updateTime()",1000);
-        document.getElementById('tReloj').innerHTML=v;
-    }
-    
-     
-      
-      //updateTime();
-
-      // assume you want to change to the 3rd tab after 3 seconds
-      function readMSG()
+    <script type="text/javascript" src="js/jquery.serializejson.js"></script>
+		<script type="text/javascript" src="js/aplicacion.js"></script>
+		<script language="javascript">
+            var activePage;
+            var currentPage;
+            var getPage;
+            
+        $(document).ready(function() {
+            
+            cargarPublicacion();
+        });
+            
+        $(window).scroll(function (event) {
+            var scroll = $(window).scrollTop();
+            // Do something
+            //alert(scroll);
+        });
+            
+         
+            function readMSG()
             {
                // $("#tabsMSG").tabs( "option", "active", 1 );
-                $("#readMessage").trigger( "click");
+                //$("#readMessage").trigger( "click");
+                document.location="chat.html#page1";
                
                
             }
-            
             function regresar()
             {
-                window.location="inicio.html#page4";
+                window.location="inicio.html";
             }
-    
-    //-->
-</script>
+            
+    </script>
 		
 		</body>
 </html>
