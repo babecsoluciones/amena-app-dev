@@ -1,4 +1,4 @@
-var tURL = "https://cors-anywhere.herokuapp.com/http://app.vivirenpurpura.mx/app/app-01-01.php";
+var tURL = "https://cors-anywhere.herokuapp.com/https://app.vivirenpurpura.mx/app/app-01-01.php";
 function iniciarSesion()
 {
           var obj = $('#datos').serializeJSON();
