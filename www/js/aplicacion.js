@@ -89,7 +89,7 @@ function reiniciarSesion()
 
 function cerrarSesion()
 {
-          if(confirm("¿Deseas cerrar la sesión?"))
+          if(confirm("\u{BF}Deseas cerrar la sesi\u{F3}n?"))
               {
                 localStorage.clear();
                 validarSesion();
@@ -105,6 +105,13 @@ function validarSesion()
                nodo.value = localStorage.getItem("codigousuario");
            });
             document.getElementById('tUsuario').innerHTML = localStorage.getItem("usuario");
+           
+            document.getElementById('nombre').innerHTML = localStorage.getItem("usuario");
+            document.getElementById('apellidos').innerHTML = localStorage.getItem("apellidos");
+            document.getElementById('telefono').innerHTML = localStorage.getItem("telefono");
+            document.getElementById('correo').innerHTML = localStorage.getItem("correo");
+            document.getElementById('password').innerHTML = localStorage.getItem("password");
+            
     }   
     else
         {
