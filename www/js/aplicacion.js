@@ -350,3 +350,31 @@ function generarRegistro()
           }); 
         
 }
+
+function consultarMensaje()
+{
+      var obj = $('#datos').serializeJSON();
+          var jsonString = JSON.stringify(obj);
+          
+    
+          $.ajax({
+              type: "POST",
+              beforeSend: function(){
+                  $('.ajax-loader').css("visibility", "visible");
+            },
+              url: tURL,
+              data: jsonString,
+              contentType: "application/json; charset=utf-8",
+              dataType: "json",
+              success: function(data){
+                  document.getElementById('txtMsg').innerHTML = data.tHTML;
+              },
+              complete: function(){
+                  $('.ajax-loader').css("visibility", "hidden");
+                },
+              failure: function(errMsg) {
+                  alert('Error al enviar los datos.');
+              }
+          }); 
+        
+}

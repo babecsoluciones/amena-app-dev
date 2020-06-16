@@ -323,12 +323,12 @@
         });
             
          
-            function readMSG()
+            function readMSG(codigo)
             {
                // $("#tabsMSG").tabs( "option", "active", 1 );
                 //$("#readMessage").trigger( "click");
+                localStorage.setItem("codigomensaje", codigo);
                 document.location="chat.html#page1";
-               
                
             }
             
