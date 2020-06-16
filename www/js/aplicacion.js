@@ -314,3 +314,39 @@ function cargarMensajes()
           }); 
         
 }
+
+function generarRegistro()
+{
+      var obj = $('#datos').serializeJSON();
+          var jsonString = JSON.stringify(obj);
+          
+    
+          $.ajax({
+              type: "POST",
+              beforeSend: function(){
+                  $('.ajax-loader').css("visibility", "visible");
+            },
+              url: tURL,
+              data: jsonString,
+              contentType: "application/json; charset=utf-8",
+              dataType: "json",
+              success: function(data){
+                  if(data.exito==1)
+                      {
+                          alert("Registro exitoso, inicia sesión para continuar");
+                          document.location="index.html";
+                      }
+                  else
+                      {
+                          alert("Error al almacenar tus datos, intenta nuevamente");
+                      }
+              },
+              complete: function(){
+                  $('.ajax-loader').css("visibility", "hidden");
+                },
+              failure: function(errMsg) {
+                  alert('Error al enviar los datos.');
+              }
+          }); 
+        
+}
