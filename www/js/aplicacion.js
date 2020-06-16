@@ -406,7 +406,7 @@ function consultarMensaje()
         
 }
 
-function generarRegistro()
+function actualizarPerfil()
 {
       var obj = $('#perfil').serializeJSON();
           var jsonString = JSON.stringify(obj);
