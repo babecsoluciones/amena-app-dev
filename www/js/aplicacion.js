@@ -22,6 +22,8 @@ function iniciarSesion()
                       localStorage.setItem("usuario", data.usuario);
                       localStorage.setItem("correo", data.correo);
                       localStorage.setItem("password", data.password);
+                      localStorage.setItem("telefono", data.telefono);
+                      localStorage.setItem("apellidos", data.apellidos);
                        window.location="../inicio.html";
                   }
                   else
@@ -104,14 +106,32 @@ function validarSesion()
            cmbUsuario.forEach(function(nodo){
                nodo.value = localStorage.getItem("codigousuario");
            });
-            document.getElementById('tUsuario').innerHTML = localStorage.getItem("usuario");
-           
-            document.getElementById('nombre').innerHTML = localStorage.getItem("usuario");
-            document.getElementById('apellidos').innerHTML = localStorage.getItem("apellidos");
-            document.getElementById('telefono').innerHTML = localStorage.getItem("telefono");
-            document.getElementById('correo').innerHTML = localStorage.getItem("correo");
-            document.getElementById('password').innerHTML = localStorage.getItem("password");
             
+           var tUsuario = document.getElementById('tUsuario');
+           
+           if(tUsuario)
+               {
+           document.getElementById('tUsuario').innerHTML = localStorage.getItem("usuario");
+           
+            document.getElementById('nombre').value = localStorage.getItem("usuario");
+            document.getElementById('apellidos').value = localStorage.getItem("apellidos");
+            document.getElementById('telefono').value = localStorage.getItem("telefono");
+            document.getElementById('correo').value = localStorage.getItem("correo");
+            document.getElementById('password').value = localStorage.getItem("password");
+               }
+    }   
+    else
+        {
+            window.location="log/index.html"; 
+        }
+    
+}
+
+function checarSesion()
+{
+    if(localStorage.getItem("codigousuario"))
+       {
+           window.location="inicio.html"; 
     }   
     else
         {
@@ -375,6 +395,43 @@ function consultarMensaje()
               dataType: "json",
               success: function(data){
                   document.getElementById('txtMsg').innerHTML = data.tHTML;
+              },
+              complete: function(){
+                  $('.ajax-loader').css("visibility", "hidden");
+                },
+              failure: function(errMsg) {
+                  alert('Error al enviar los datos.');
+              }
+          }); 
+        
+}
+
+function generarRegistro()
+{
+      var obj = $('#perfil').serializeJSON();
+          var jsonString = JSON.stringify(obj);
+          
+    
+          $.ajax({
+              type: "POST",
+              beforeSend: function(){
+                  $('.ajax-loader').css("visibility", "visible");
+            },
+              url: tURL,
+              data: jsonString,
+              contentType: "application/json; charset=utf-8",
+              dataType: "json",
+              success: function(data){
+                  if(data.exito==1)
+                      {
+                          alert("Se actualizaron tus datos. Favor de iniciar sesion nuevamente...");
+                          localStorage.clear();
+                          validarSesion();
+                      }
+                  else
+                      {
+                          alert("Error al almacenar tus datos, intenta nuevamente");
+                      }
               },
               complete: function(){
                   $('.ajax-loader').css("visibility", "hidden");
