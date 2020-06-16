@@ -78,13 +78,13 @@
 			<div class="ui-content" style="background-image: url(img/bg-30.png); background-size: cover; text-align: center; color: #000; width:105%; margin-left:-20px; margin-top:-20px"><br>
 	    <img src="img/logo.png" style="max-width:50%">
 				<br><br>
-				<span id="tUsuario">Martin Faccio</span><br><br>
+				<span id="tUsuario"></span><br><br>
 	</div>	
         
 			<center>
 				
 				<div id="xhrNoticias">
-                <form id="frmInicio"><input type="hidden" name="accion" value="ini-con"></form>
+                <form id="frmInicio"><input type="hidden" name="accion" value="ini-con"><input type="hidden" name="codigousuario" id="eCodUsuario0"></form>
 				    <ul data-role="listview" id="ini-con">
                         
                     </ul>
@@ -109,14 +109,19 @@
 		<div data-role="page" id="page2">
 			<div data-role="header" data-position="fixed">
 				<center><img src="img/logo-bco.png" style="max-height:50px"></center>
+				<a href="#" class="ui-btn-left btn-navegacion" onclick="cargarMensajes()" style="margin-top:18px;"><i class="fas fa-sync"></i></a>
 			</div>
 			
 			<div class="ui-content">
 				<div class="ui-content" style="background-image: url(img/bg-acuarela.jpg); background-size: cover; text-align: center; color: #000; width:105%; margin-left:-20px; margin-top:-20px"><br>
 	    <h3>Nuevos mensajes</h3><br>
 	</div>	
-				
-    <ul data-role="listview" style="overflow-y:scroll;">
+		<form id="frmMensajes" name="frmMensajes">
+        <input type="hidden" name="accion" value="men-con">
+		    <input type="hidden" id="eCodUsuario1" name="codigousuario">
+		    <input type="hidden" id="eCodMensaje" name="codigomensaje">
+		</form>		
+    <ul data-role="listview" style="overflow-y:scroll;" id="lstMensajes">
         <li><a href="#" onclick="readMSG()">Mensaje 01</a></li>
         <li><a href="#" onclick="readMSG()">Mensaje 02</a></li>
         <li><a href="#" onclick="readMSG()">Mensaje 03</a></li>
@@ -303,9 +308,12 @@
             
         $(document).ready(function() {
             
+            validarSesion();
+            
             cargarInicio();
             cargarBlog();
             cargarNoticias();
+            cargarMensajes();
         });
             
         $(window).scroll(function (event) {

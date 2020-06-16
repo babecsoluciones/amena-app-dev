@@ -6,10 +6,10 @@ function iniciarSesion()
           
           $.ajax({
               type: "POST",
-              beforeSend: function(){
+              /*beforeSend: function(){
                   $('.ajax-loader').css("visibility", "visible");
                   
-            },
+            },*/
               url: tURL,
               data: jsonString,
               contentType: "application/json; charset=utf-8",
@@ -22,7 +22,7 @@ function iniciarSesion()
                       localStorage.setItem("usuario", data.usuario);
                       localStorage.setItem("correo", data.correo);
                       localStorage.setItem("password", data.password);
-                       window.location="index.html";
+                       window.location="../inicio.html";
                   }
                   else
                   {
@@ -41,10 +41,10 @@ function iniciarSesion()
                          
                   }
               },
-              complete: function(){
+             /* complete: function(){
                   $('.ajax-loader').css("visibility", "hidden");
                   
-                },
+                },*/
               failure: function(errMsg) {
                   alert('Error al enviar los datos.');
               }
@@ -59,10 +59,7 @@ function reiniciarSesion()
           var jsonString = JSON.stringify(obj);
     
             localStorage.removeItem("codigousuario");
-            localStorage.removeItem("codigopromotoria");
-            localStorage.removeItem("codigotienda");
-            localStorage.removeItem("tiposimagenes");
-            localStorage.removeItem("productos");
+            localStorage.removeItem("usuario");
             localStorage.removeItem("correo");
             localStorage.removeItem("password");
           
@@ -76,13 +73,10 @@ function reiniciarSesion()
                  
                   
                       localStorage.setItem("codigousuario", data.codigousuario);
-                      localStorage.setItem("codigopromotoria", data.codigopromotoria);
-                      localStorage.setItem("codigotienda", data.codigotienda);
-                      localStorage.setItem("tiposimagenes", data.tiposimagenes);
-                      localStorage.setItem("productos", data.productos);
+                      localStorage.setItem("usuario", data.usuario);
                       localStorage.setItem("correo", data.correo);
                       localStorage.setItem("password", data.password);
-                      window.location="index.html";
+                       window.location="inicio.html";
                   
               },
               failure: function(errMsg) {
@@ -114,7 +108,7 @@ function validarSesion()
     }   
     else
         {
-            window.location="login.html"; 
+            window.location="log/index.html"; 
         }
     
 }
@@ -289,4 +283,34 @@ function cargarPublicacion()
               }
           }); 
     
+}
+
+function cargarMensajes()
+{
+      var obj = $('#frmMensajes').serializeJSON();
+          var jsonString = JSON.stringify(obj);
+          var lstMensajes = document.getElementById('lstMensajes');
+          var syncAlertas = document.getElementById('syncMessages');
+    
+          $.ajax({
+              type: "POST",
+              beforeSend: function(){
+                  $('.ajax-loader').css("visibility", "visible");
+            },
+              url: tURL,
+              data: jsonString,
+              contentType: "application/json; charset=utf-8",
+              dataType: "json",
+              success: function(data){
+                  lstMensajes.innerHTML = data.tHTML;
+                  $("#lstMensajes").listview("refresh");
+              },
+              complete: function(){
+                  $('.ajax-loader').css("visibility", "hidden");
+                },
+              failure: function(errMsg) {
+                  alert('Error al enviar los datos.');
+              }
+          }); 
+        
 }

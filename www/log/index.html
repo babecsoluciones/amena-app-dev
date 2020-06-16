@@ -32,14 +32,15 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
-				<!--<form class="login100-form validate-form">-->
+				<form id="datos" name="datos">
+				<input type="hidden" name="accion" id="accion" value="inse-reg">
 					<span class="login100-form-title p-b-26">
 						<img src="../img/logo.png" style="max-width: 500px; width: 70%">
 					</span>
 					
 
 					<div class="wrap-input100 validate-input" data-validate = "E-mail válido: a@b.c">
-						<input class="input100" type="text" name="email">
+						<input class="input100" type="text" name="correo">
 						<span class="focus-input100" data-placeholder="Email"></span>
 					</div>
 
@@ -47,14 +48,14 @@
 						<span class="btn-show-pass">
 							<i class="zmdi zmdi-eye"></i>
 						</span>
-						<input class="input100" type="password" name="pass">
+						<input class="input100" type="password" name="password">
 						<span class="focus-input100" data-placeholder="Password"></span>
 					</div>
 
 					<div class="container-login100-form-btn">
 						<div class="wrap-login100-form-btn">
 							<div class="login100-form-bgbtn"></div>
-							<button class="login100-form-btn" onclick="document.location='../inicio.html'">
+							<button type="button" class="login100-form-btn" onclick="iniciarSesion()">
 								Acceder
 							</button>
 						</div>
@@ -69,7 +70,7 @@
 							Registrarme
 						</a>
 					</div>
-				<!--</form>-->
+				</form>
 			</div>
 		</div>
 	</div>
@@ -93,6 +94,10 @@
 	<script src="vendor/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
 	<script src="js/main.js"></script>
+	
+	<script type="text/javascript" src="../js/jquery-1.11.1.min.js" id="cordova-jquery"></script>
+    <script type="text/javascript" src="../js/jquery.serializejson.js"></script>
+		<script type="text/javascript" src="../js/aplicacion.js"></script>
 
 </body>
 </html>
