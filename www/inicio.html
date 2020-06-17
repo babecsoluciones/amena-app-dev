@@ -62,14 +62,14 @@
         }*/
 		</style>
         <title>AMENA | Epilepsia</title>
-        
+		<link rel="stylesheet" href="xpull/xpull.css">
     </head>
     <body>
 
 		<!-- page 1 -->
 		<div data-role="page" id="page1">
 			<div data-role="header" data-position="fixed">
-			<a href="#" class="ui-btn-left btn-navegacion" onclick="cargarInicio()"><i class="fas fa-sync"></i></a>
+			<a href="#" class="ui-btn-left btn-navegacion" onclick="cargarInicio()"style="display:none;"><i class="fas fa-sync"></i></a>
 				<center><img src="img/logo-bco.png" style="max-height:50px"></center>
 			</div>
 			
@@ -109,10 +109,10 @@
 		<div data-role="page" id="page2">
 			<div data-role="header" data-position="fixed">
 				<center><img src="img/logo-bco.png" style="max-height:50px"></center>
-				<a href="#" class="ui-btn-left btn-navegacion" onclick="cargarMensajes()"><i class="fas fa-sync"></i></a>
+				<a href="#" class="ui-btn-left btn-navegacion" onclick="cargarMensajes()"style="display:none;"><i class="fas fa-sync"></i></a>
 			</div>
 			
-			<div class="ui-content">
+			<div class="ui-content" id="divMensajes">
 				<div class="ui-content" style="background-image: url(img/bg-acuarela.jpg); background-size: cover; text-align: center; color: #000; width:105%; margin-left:-20px; margin-top:-20px"><br>
 	    <h3>Nuevos mensajes</h3><br>
 	</div>	
@@ -142,11 +142,11 @@
 				<!-- page 3 -->
 		<div data-role="page" id="page3">
 			<div data-role="header" data-position="fixed">
-			<a href="#" class="ui-btn-left btn-navegacion" onclick="cargarNoticias()"><i class="fas fa-sync"></i></a>
+			<a href="#" class="ui-btn-left btn-navegacion" onclick="cargarNoticias()"style="display:none;"><i class="fas fa-sync"></i></a>
 				<center><img src="img/logo-bco.png" style="max-height:50px"></center>
 			</div>
 			
-			<div class="ui-content"  style="overflow-y: scroll;">
+			<div class="ui-content"  style="overflow-y: scroll;" id="divNoticias">
 	<div class="ui-content" style="background-image: url(img/bg-acuarela.jpg); background-size: cover; text-align: center; color: #000; width:105%; margin-left:-20px; margin-top:-20px"><br>
 	    <h3>NOTICIAS</h3><br>
 	</div>	
@@ -176,7 +176,7 @@
             <!-- page 4 -->
 		<div data-role="page" id="page4">
 			<div data-role="header" data-position="fixed">
-			<a href="#" class="ui-btn-left btn-navegacion" onclick="cargarBlog()"><i class="fas fa-sync"></i></a>
+			<a href="#" class="ui-btn-left btn-navegacion" onclick="cargarBlog()"style="display:none;"><i class="fas fa-sync"></i></a>
 				<center><img src="img/logo-bco.png" style="max-height:50px"></center>
 			</div>
 			
@@ -317,6 +317,35 @@
                
             }
             
+	</script>
+	
+	<script src="xpull/xpull.js"></script>
+        
+        <script>
+
+        // jquery document ready
+        $(function () {
+
+            // Init xpull plugin for demo
+            $('#xhrNoticias').xpull({
+                'callback': function () {
+                    cargarInicio();
+                }
+			});
+			
+			$('#divNoticias').xpull({
+                'callback': function () {
+                    cargarNoticias();
+                }
+			});
+			
+			$('#divMensajes').xpull({
+                'callback': function () {
+                    cargarMensajes();
+                }
+            });
+
+        });
     </script>
 		
 		</body>
