@@ -112,7 +112,7 @@
 				<a href="#" class="ui-btn-left btn-navegacion" onclick="cargarMensajes()"style="display:none;"><i class="fas fa-sync"></i></a>
 			</div>
 			
-			<div class="ui-content" id="divMensajes">
+			<div class="ui-content">
 				<div class="ui-content" style="background-image: url(img/bg-acuarela.jpg); background-size: cover; text-align: center; color: #000; width:105%; margin-left:-20px; margin-top:-20px"><br>
 	    <h3>Nuevos mensajes</h3><br>
 	</div>	
@@ -120,10 +120,12 @@
         <input type="hidden" name="accion" value="men-con">
 		    <input type="hidden" id="eCodUsuario1" name="codigousuario">
 		    <input type="hidden" id="eCodMensaje" name="codigomensaje">
-		</form>		
+		</form>	
+		<div  id="divMensajes">
     <ul data-role="listview" style="overflow-y:scroll;" id="lstMensajes">
         
-                    </ul>
+					</ul>
+				</div>	
 			</div><!-- end page 2 content -->
 			
 			<div data-role="footer" data-position="fixed">
@@ -146,18 +148,18 @@
 				<center><img src="img/logo-bco.png" style="max-height:50px"></center>
 			</div>
 			
-			<div class="ui-content"  style="overflow-y: scroll;" id="divNoticias">
+			<div class="ui-content"  style="overflow-y: scroll;">
 	<div class="ui-content" style="background-image: url(img/bg-acuarela.jpg); background-size: cover; text-align: center; color: #000; width:105%; margin-left:-20px; margin-top:-20px"><br>
 	    <h3>NOTICIAS</h3><br>
 	</div>	
    
    		<form id="frmNoticias"><input type="hidden" name="accion" value="not-con"></form>
-   						
+   		<div  id="divNoticias">
     <ul data-role="listview" data-filter="true" data-filter-placeholder="Buscar" data-inset="true" id="not-con">
         
         
     </ul>
-   
+</div>				
 			</div><!-- end page 3 content -->
 			
 			<div data-role="footer" data-position="fixed">
